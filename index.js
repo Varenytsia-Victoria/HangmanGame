@@ -6,7 +6,7 @@ const newGameButton = document.getElementById('new-game-button')
 const resultText = document.getElementById('result-text')
 
 let options = {
-	fruits: [
+	Fruits: [
 		'Apple',
 		'Blueberry',
 		'Mandarin',
@@ -14,16 +14,16 @@ let options = {
 		'Pomegranate',
 		'Watermelon',
 	],
-	animals: ['Hamster', 'Horse', 'Squirrel', 'Panther', 'Rabbit', 'Zebra'],
-	colors: ['Orange', 'Emerald', 'Purple', 'Terracotta', 'Maroon'],
-	countries: ['India', 'Hungary', 'Italy', 'Switzerland', 'France', 'Ukraine'],
+	Animals: ['Hamster', 'Horse', 'Squirrel', 'Panther', 'Rabbit', 'Zebra'],
+	Colors: ['Orange', 'Emerald', 'Purple', 'Terracotta', 'Maroon'],
+	Countries: ['India', 'Hungary', 'Italy', 'Switzerland', 'France', 'Ukraine'],
 }
 
 let winCount = 0
 let count = 0
 let chosenWord = ''
 
- const displayOptions = () => {
+const displayOptions = () => {
 	optionsContainer.innerHTML += `<h3>Please Select A Theme</h3>`
 	let buttonCon = document.createElement('div')
 
@@ -86,6 +86,21 @@ const generateWord = optionValue => {
 }
 
 const initializer = () => {
+			document.querySelector('.modal-options').classList.add('none')
+
+	document
+		.querySelector('.start-game-btn')
+		.addEventListener('click', function () {
+			document.querySelector('.welcome-modal').classList.add('none')
+			document.querySelector('.rules-modal').classList.remove('none')
+		})
+
+	document.querySelector('.rules-btn').addEventListener('click', function () {
+		document.querySelector('.modal-options').classList.remove('none')
+					document.querySelector('.rules-modal').classList.add('none')
+	})
+
+
 	winCount = 0
 	count = 0
 
@@ -140,16 +155,12 @@ const initializer = () => {
 	displayOptions()
 }
 
-
 const startNewGame = () => {
 	console.log('lose')
-	location.reload() 
+	location.reload()
 
 	initializer()
 }
 
-
-
 //newGameButton.addEventListener('click', initializer)
 window.onload = initializer
-

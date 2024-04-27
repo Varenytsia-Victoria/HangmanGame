@@ -13,6 +13,29 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+<div class="welcome-modal modal">
+	<div class="welcome">
+		<span class="welcome-title"> Welcome to the Hangman Game! </span>
+		<span class="welcome-content">Welcome to the word-guessing game, Hangman! <br><span> Can you guess the secret word before <br> you run out of lives?</span> </span>
+		<button class="start-game-btn btn">Are you ready to play?</button>
+	</div>
+</div>
+
+<div class="rules-modal modal none">
+	<div class="rules">
+    <span class="rules-title"> Rules </span>
+    <span class="rules-content">
+      <ul>
+        <li>You have 9 lives to guess the word.</li>
+        <li>Guess the letters in the secret word.</li>
+        <li>Each incorrect guess costs a life.</li>
+        <li>Guess the word before lives run out!</li>
+      </ul>
+    </span> 
+    <button class="rules-btn btn">Let's get started!</button>
+  </div>
+</div>
+
 		<div class="container modal-options modal">
 			<div id="options-container"></div>
 		</div>
